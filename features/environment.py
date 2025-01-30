@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-
+import os
 
 def before_scenario(context, scenario):
     print(">>> DEBUG: Entrato in before_scenario")
@@ -13,6 +13,10 @@ def before_scenario(context, scenario):
     chrome_options.add_argument("--disable-gpu")  # Evita problemi di rendering
     chrome_options.add_argument("--no-sandbox")  # Necessario per ambienti CI/CD
     chrome_options.add_argument("--disable-dev-shm-usage")  # Evita problemi di memoria condivisa
+
+    # Creazione cartella report se non esiste
+    if not os.path.exists("reports"):
+        os.makedirs("reports")
 
     try:
         # Usa webdriver-manager per installare automaticamente ChromeDriver
