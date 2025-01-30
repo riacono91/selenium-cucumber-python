@@ -32,9 +32,6 @@ jobs:
 
       - name: Run Behave tests
         run: |
-        # -- FILE: behave.ini
-        # Define ALIAS for HtmlFormatter.
-          [ behave.formatters ]
           html = behave_html_formatter:HTMLFormatter
           behave --format=html --outfile=reports/report.html  # Esegui i test con il formato HTML
 
