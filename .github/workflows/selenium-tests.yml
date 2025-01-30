@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Puoi anche cambiare questa parte per usare un runner diverso
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -25,12 +25,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install behave-html-formatter  # Installa il plugin per il report HTML
 
       - name: Setup ChromeDriver
         uses: browser-actions/setup-chrome@v1
 
       - name: Run Behave tests
-        run: behave --format=html --outfile=reports/report.html
+        run: behave --format=html --outfile=reports/report.html  # Esegui i test con il formato HTML
 
       - name: Upload test results (HTML)
         uses: actions/upload-artifact@v4
