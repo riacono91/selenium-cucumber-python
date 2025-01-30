@@ -31,9 +31,7 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Run Behave tests
-        run: |
-          html = behave_html_formatter:HTMLFormatter
-          behave --format=html --outfile=reports/report.html  # Esegui i test con il formato HTML
+        run: behave -f html -o reports/report.html
 
       - name: Upload test results (HTML)
         uses: actions/upload-artifact@v4
