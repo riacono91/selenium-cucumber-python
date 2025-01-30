@@ -30,7 +30,8 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Run Behave tests
-        run: behave --format=json --outfile=reports/report.json
+        run: |
+          behave --no-capture --no-capture-stderr --format=pretty
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
