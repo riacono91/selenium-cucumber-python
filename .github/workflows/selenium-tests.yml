@@ -31,7 +31,6 @@ jobs:
 
       - name: Run Behave tests
         run: |
-          # Rimuovi --user-data-dir per evitare conflitti
           behave --format=json --outfile=reports/report.json
 
       - name: Upload test results
