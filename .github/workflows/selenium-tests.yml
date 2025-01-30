@@ -31,7 +31,12 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Run Behave tests
-        run: behave --format=behave_html_formatter --outfile=reports/report.html  # Esegui i test con il formato HTML
+        run: |
+        # -- FILE: behave.ini
+        # Define ALIAS for HtmlFormatter.
+          [ behave.formatters ]
+          html = behave_html_formatter:HTMLFormatter
+          behave --format=html --outfile=reports/report.html  # Esegui i test con il formato HTML
 
       - name: Upload test results (HTML)
         uses: actions/upload-artifact@v4
