@@ -12,7 +12,7 @@ def open_login_page(context):
 def enter_valid_credentials(context):
     context.driver.find_element(By.ID, "my-text-id").send_keys("testuser")
     context.driver.find_element(By.NAME, "my-password").send_keys("password123")
-
+    
 @when("I submit the form")
 def submit_form(context):
     context.driver.find_element(By.CSS_SELECTOR, "button").click()

@@ -27,6 +27,15 @@ def before_scenario(context, scenario):
         raise  # Rilancia l'eccezione per segnalare il fallimento
 
 
-def after_scenario(context, scenario):
+def after_scenario(context, scenario):  
+    if scenario.status == "failed":
+        screenshot_dir = "reports/screenshots"
+        os.makedirs(screenshot_dir, exist_ok=True)
+
+        screenshot_path = os.path.join(screenshot_dir, f"{scenario.name}.png")
+        context.driver.save_screenshot(screenshot_path)
+
+        print(f"\n📸 Screenshot salvato in: {screenshot_path}")
+        
     if hasattr(context, 'driver'):
         context.driver.quit()
