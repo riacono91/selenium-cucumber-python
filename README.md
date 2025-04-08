@@ -3,7 +3,7 @@
 This project uses **Selenium**, **Behave (Cucumber for Python)**, and **Pytest** to write and execute automated tests based on BDD (Behavior-Driven Development). Everything is integrated with **GitHub Actions** to automatically run tests and generate an HTML report accessible via **GitHub Pages**.
 
 ## Project Goal
-The main goal of this project is to **practice with test automation tools** to enhance my skills as a QA Engineer. To achieve this, I have created some example tests on a login page, such as:
+The main goal of this project is to **practice with test automation tools and Selenium** to enhance my skills as a QA Engineer. To achieve this, I have created some example tests on a login page, such as:
 
 ```gherkin
 Feature: Login Functionality

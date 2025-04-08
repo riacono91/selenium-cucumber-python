@@ -24,3 +24,4 @@ def verify_confirmation_message(context, expected_message):
     )
     actual_message = context.driver.find_element(By.TAG_NAME, "h1").text
     assert actual_message == expected_message, f"Expected '{expected_message}', but got '{actual_message}'"
+
