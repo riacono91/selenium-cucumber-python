@@ -1,4 +1,4 @@
-Feature: nteract with form fields (input, dropdown, radio)
+Feature: Interact with form fields (input, dropdown, radio)
 
   Scenario: Successful login form submission
     Given I open the login page
