@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
+from features.utils import fill_input
 
 @given('I open the login page of a new link')
 def open_login_page2(context):
@@ -9,8 +10,8 @@ def open_login_page2(context):
 
 @when('I enter valid credentials of a new link')
 def enter_valid_credentials2(context):
-    context.driver.find_element(By.ID, "username").send_keys("tomsmith")
-    context.driver.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
+    fill_input(context.driver, By.ID, "username", "tomsmith")
+    fill_input(context.driver, By.ID, "password", "SuperSecretPassword!")
 
 @when('I submit the login form')
 def submit_form2(context):

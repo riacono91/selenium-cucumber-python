@@ -3,7 +3,23 @@
 This project uses **Selenium**, **Behave (Cucumber for Python)**, and **Pytest** to write and execute automated tests based on BDD (Behavior-Driven Development). Everything is integrated with **GitHub Actions** to automatically run tests and generate an HTML report accessible via **GitHub Pages**.
 
 ## Project Goal
-The main goal of this project is to **practice with test automation tools and Selenium** to enhance my skills as a QA Engineer. To achieve this, I have created some example tests on a login page, such as:
+The goal of this project is to **practice test automation** and demonstrate my QA engineering skills using Selenium and BDD practices.
+
+To achieve this, I automated real interactions on two public websites:
+
+1. [Selenium Web Form](https://www.selenium.dev/selenium/web/web-form.html) – testing forms, dropdowns, radio buttons.
+2. [HerokuApp Login Page](https://the-internet.herokuapp.com/login) – testing login flows and alert messages.
+
+The current test coverage includes:
+
+- ✅ Valid and invalid login attempts
+- ✅ Input validation and alert handling
+- ✅ Form submission with text input
+- ✅ Dropdown and radio button interactions
+
+> Each test scenario is written using the Gherkin language and implemented with Behave step definitions.
+
+Example:
 
 ```gherkin
 Feature: Login Functionality
@@ -14,11 +30,6 @@ Feature: Login Functionality
     And I submit the form
     Then I should see the confirmation message "Form submitted"
 ```
-
-In future developments, I will add scenarios to verify:
-- Invalid credentials
-- Empty fields in the login form
-- Validation errors and error messages
 
 ---
 
@@ -90,6 +101,7 @@ Test results are saved in HTML format and published via GitHub Pages.
 
 **[View Test Report](https://riacono91.github.io/selenium-cucumber-python/report.html)**
 
+![Test Report Screenshot](assets/report-screenshot.png)
 ---
 
 ## License
